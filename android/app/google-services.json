@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "943611960984",
+    "project_id": "mechinetask-cc1da",
+    "storage_bucket": "mechinetask-cc1da.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943611960984:android:ac8774082004678aacfaed",
+        "android_client_info": {
+          "package_name": "com.example.recipieapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBdmidNFXFl0fn0vX3rdZ2KDAp-9bJrVU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
