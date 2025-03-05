@@ -13,11 +13,12 @@ class IngredientsPage extends StatelessWidget {
           ingredients == null || ingredients!.isEmpty
               ? Center(child: Text('No Ingredients Available'))
               : ListView.builder(
+                shrinkWrap: true,
                 itemCount: ingredients!.length,
                 itemBuilder: (context, index) {
                   String key = ingredients!.keys.elementAt(index);
                   dynamic value = ingredients![key];
-
+              
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(

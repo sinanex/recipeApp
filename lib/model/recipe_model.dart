@@ -5,8 +5,14 @@ class RecipeModel {
   final String steps;
   final String image;
   final Map<String, dynamic> ingredients;
+  final String username;
+  final String catogary;
+  final String? id;
 
   RecipeModel({
+     this.id,
+    required this.catogary,
+    required this.username,
     required this.ingredients,
     required this.name,
     required this.description,
@@ -15,8 +21,11 @@ class RecipeModel {
     required this.image,
   });
 
-  factory RecipeModel.fromJson(Map<String, dynamic> json) {
+  factory RecipeModel.fromJson(Map<String, dynamic> json,String id) {
     return RecipeModel(
+      id: id,
+      catogary: json['catogary']??'',
+      username: json['username']??'',
       ingredients: Map<String, dynamic>.from(json["ing"] ?? {}),
       image: json['image'] ?? '',
       steps: json['steps'] ?? '',
@@ -28,6 +37,8 @@ class RecipeModel {
   
   Map<String, dynamic> toJson() {
     return {
+      'catogary':catogary,
+      'username':username,
       'title': name,
       'description': description,
       'time': time,

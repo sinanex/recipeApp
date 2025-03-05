@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'dart:developer';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 
@@ -17,9 +19,9 @@ class ImageServices {
 
       var response = await request.send();
       if (response.statusCode == 200) {
-        var responseData = await response.stream.bytesToString();
-        print('Upload successful: $responseData');
-        return responseData;
+        Map<String,dynamic> responseData =  jsonDecode(await response.stream.bytesToString());
+        log(responseData['secure_url']);
+        return responseData['secure_url'];
       } else {
         print('Upload failed: ${response.statusCode}');
         return null;
